@@ -1,53 +1,63 @@
 # 🧗‍♀️ BetaBoost: AI-Powered Climbing Coach
 
-**BetaBoost** is an AI climbing coach that analyzes user-submitted climbing videos to provide personalized technical feedback. Using pose estimation, dynamic biomechanical features, and an expert rule system, the tool delivers feedback at a fraction of professional coaching costs.
+**BetaBoost** is an intelligent climbing feedback tool that analyzes climbing videos using pose estimation, biomechanical features, and expert-defined rules. The system generates real-time feedback and training suggestions to help climbers improve their technique—offering coaching insights at scale.
 
-> 🧠 “Climbing harder, but not climbing better.” — BetaBoost bridges this gap with intelligent, visual feedback.
+> “Climbing harder, but not climbing better.”  
+> BetaBoost bridges that gap with intelligent, personalized, visual feedback.
 
 ---
 
 ## 🔍 Key Features
 
-- 🎯 **Pose Estimation** with MediaPipe for 33 body landmarks per frame
-- 📊 **327 Biomechanical Features**: joint angles, balance, trunk rotation, center of mass, and more
-- 🔁 **Dynamic Movement Analysis** using smart frame sampling
-- 🧠 **Rule-Based System**: Categorizes errors in 7 technique areas
-- 🤖 **Natural Language Feedback** via Claude API (e.g. "twist your hips more on vertical routes")
-- 🖥️ **Streamlit Web App** for end-to-end interaction
-- 💡 **Deployable + Scalable** for gym or personal use
+- 🎯 **Pose Estimation**: MediaPipe-powered keypoint tracking with 33 landmarks per frame
+- 📊 **327 Biomechanical Features**: Joint angles, movement range, center of mass (CoM), balance, trunk angle, and more
+- 🔁 **Dynamic Sampling**: Strategically samples and smooths pose data for multi-frame feature generation
+- 🧠 **Rule-Based Evaluation System**: Encodes expert climbing principles to evaluate performance
+- 🧮 **XGBoost Feature Ranking**: Identifies top 30 most important features based on labeled data
+- 🤖 **Claude API Integration**: Converts numerical outputs into coach-style natural language feedback
+- 🖥️ **Streamlit Web Interface**: Upload videos and get results interactively
+- 📈 **Trajectory Visualization**: Shows CoM movement and movement efficiency indicators
 
 ---
 
-## 📸 Project Interface
+## 📸 Product Walkthrough
 
-### Home UI with Personalized Feedback
+### 🖼️ Upload Interface  
+Users upload short climbing videos and input route type and difficulty.
 
-![BetaBoost Screenshot](assets/beta_screenshot.png)
+![Upload UI](assets/upload_interface.png)
 
-Users upload a video, select route type and difficulty, and receive:
-- Visual analysis (skeletal overlay, trajectory)
-- Text feedback on technique issues
-- Suggested drills and corrections
+---
+
+### 🧠 Pose Detection + Summary Panel  
+Real-time skeleton tracking overlaid on climbing video, along with scoring breakdown and main issue identification.
+
+![Pose Detection + Score](assets/pose_score_summary.png)
+
+---
+
+### 📊 Corrections, Training & Trajectory  
+Displays horizontal center of mass trajectory, corrective suggestions, and drill recommendations.
+
+![Corrections + Training](assets/correction_training_trajectory.png)
 
 ---
 
 ## 🧰 Tech Stack
 
 - **Language**: Python
+- **CV & Keypoints**: [MediaPipe](https://github.com/google/mediapipe)
+- **Modeling**: XGBoost, NumPy, Scikit-learn
 - **Frontend**: Streamlit
-- **CV**: MediaPipe
-- **Modeling**: XGBoost
-- **Logic System**: Rule engine + knowledge base
-- **NLP**: Claude API
 - **Visualization**: Matplotlib, OpenCV
+- **Natural Language**: Claude API by Anthropic
+- **Other**: Pandas, Pillow, pyngrok
 
 ---
 
-## 🚀 Usage
+## 🚀 How to Run
 
-### Requirements
-
-Install dependencies:
+Install requirements:
 
 ```bash
 pip install -r requirements.txt
