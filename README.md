@@ -46,7 +46,7 @@ Displays horizontal center of mass trajectory, corrective suggestions, and drill
 ## 🧰 Tech Stack
 
 - **Language**: Python
-- **CV & Keypoints**: [MediaPipe](https://github.com/google/mediapipe)
+- **CV & Keypoints**: MediaPipe
 - **Modeling**: XGBoost, NumPy, Scikit-learn
 - **Frontend**: Streamlit
 - **Visualization**: Matplotlib, OpenCV
