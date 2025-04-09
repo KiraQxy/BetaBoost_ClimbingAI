@@ -10,7 +10,7 @@
 ## 🔍 Key Features
 
 - 🎯 **Pose Estimation**: MediaPipe-powered keypoint tracking with 33 landmarks per frame
-- 📊 **327 Biomechanical Features**: Joint angles, movement range, center of mass (CoM), balance, trunk angle, and more
+- 📊 **327 Biomechanical Features**: Joint angles, movement range, center of mass, balance, trunk angle, and more
 - 🔁 **Dynamic Sampling**: Strategically samples and smooths pose data for multi-frame feature generation
 - 🧠 **Rule-Based Evaluation System**: Encodes expert climbing principles to evaluate performance
 - 🧮 **XGBoost Feature Ranking**: Identifies top 30 most important features based on labeled data
