@@ -59,22 +59,6 @@ def render_ui():
         .stFileUploader {
             min-height: 60px;
         }
-        .file-info-container {
-            min-height: 55px;
-            padding: 10px;
-            border: 1px solid #e5e7eb;
-            border-radius: 4px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-        }
-        .empty-container {
-            min-height: 55px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            visibility: hidden;
-        }
         .score-card {
             display: flex;
             flex-direction: column;
@@ -140,7 +124,7 @@ def render_ui():
 
     with row1_col1:
         st.markdown("##### Upload climbing video")
-        uploaded_file = st.file_uploader("", type=["mp4", "mov", "avi"])
+        uploaded_file = st.file_uploader("", type=["mp4", "mov", "avi"], label_visibility="collapsed")
 
     with row1_col2:
         st.markdown("##### Route Type")
@@ -151,18 +135,7 @@ def render_ui():
         climber_level = st.selectbox("", ["Beginner", "Intermediate", "Advanced"], label_visibility="collapsed")
 
     with row2_col1:
-        if uploaded_file:
-            st.markdown(f"""
-            <div class="file-info-container">
-                <span style="margin-right: 10px;"><i class="fas fa-file-video"></i></span>
-                <span style="font-weight: 500;">{uploaded_file.name}</span>
-                <span style="margin-left: 10px; color: #6b7280; font-size: 0.875rem;">
-                    {round(uploaded_file.size / (1024 * 1024), 2)} MB
-                </span>
-            </div>
-            """, unsafe_allow_html=True)
-        else:
-            st.markdown("""<div class="empty-container"></div>""", unsafe_allow_html=True)
+        pass  # File info shown by file_uploader
 
     with row2_col2:
         st.markdown("##### Difficulty")
